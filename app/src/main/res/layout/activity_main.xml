@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/rs_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Douane temporelle"
+        android:textColor="#17365D"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rs_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Formulaire d'identification du voyageur"
+        android:textColor="#055555"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rs_title" />
+
+    <TextView
+        android:id="@+id/rs_label_nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:text="Nom du voyageur"
+        android:textColor="#17365D"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rs_subtitle" />
+
+    <TextView
+        android:id="@+id/rs_label_naissance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="68dp"
+        android:text="Année de naissance"
+        android:textColor="#17365D"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rs_label_nom" />
+
+    <TextView
+        android:id="@+id/rs_label_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="76dp"
+        android:text="Année de destination"
+        android:textColor="#17365D"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rs_label_naissance" />
+
+    <TextView
+        android:id="@+id/rs_label_motif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="88dp"
+        android:text="Motif du voyage"
+        android:textColor="#17365D"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rs_label_destination" />
+
+    <EditText
+        android:id="@+id/rs_nom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="Saisir le nom du voyageur"
+        android:inputType="text|textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/rs_label_nom"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="170dp" />
+
+    <EditText
+        android:id="@+id/rs_annee_naissance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="2005"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/rs_label_naissance"
+        app:layout_constraintTop_toBottomOf="@+id/rs_nom" />
+
+    <EditText
+        android:id="@+id/rs_annee_destination"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="2050"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/rs_label_destination"
+        app:layout_constraintTop_toBottomOf="@+id/rs_annee_naissance" />
+
+    <RadioGroup
+        android:id="@+id/rs_radio_group_motif"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/rs_label_motif"
+        app:layout_constraintTop_toBottomOf="@+id/rs_annee_destination" >
+
+        <RadioButton
+            android:id="@+id/rs_motif_tourisme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tourisme" />
+
+        <RadioButton
+            android:id="@+id/rs_motif_passe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modification du passé" />
+
+        <RadioButton
+            android:id="@+id/rs_motif_fuite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fuite" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/rs_btn_inspecter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Inspecter le profil"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="631dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
