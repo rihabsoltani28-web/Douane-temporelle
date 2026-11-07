@@ -1,6 +1,10 @@
 package com.example.douanetemporelle;
 
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -8,17 +12,120 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
+//houni 3malt déclaration des variables mte3i
+    EditText nom;
+    EditText anneeNaissance;
+    EditText anneeDestination;
+    RadioGroup radioGroupMotif;
+    Button btnInspecter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         WindowCompat.enableEdgeToEdge(getWindow());
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        ViewCompat.setOnApplyWindowInsetsListener(
+                findViewById(R.id.main), (v, insets) -> {
+
+                    Insets systemBars = insets.getInsets(
+                            WindowInsetsCompat.Type.systemBars());
+
+                    v.setPadding(systemBars.left, systemBars.top,
+                            systemBars.right, systemBars.bottom);
+
+                    return insets;
+                });
+
+        // récupérite les composants eli fi l'interface
+        nom = findViewById(R.id.rs_nom);
+        anneeNaissance = findViewById(R.id.rs_annee_naissance);
+        anneeDestination = findViewById(R.id.rs_annee_destination);
+        radioGroupMotif = findViewById(R.id.rs_radio_group_motif);
+        btnInspecter = findViewById(R.id.rs_btn_inspecter);
+
+        // chnowa bch ysir wa9t clic 3la bouton
+        btnInspecter.setOnClickListener(v -> {
+
+            // récupérite les valeurs eli dakhalhom utilisateur
+            String nomVoyageur = nom.getText().toString().trim();
+            String naissance = anneeNaissance.getText().toString().trim();
+            String destination = anneeDestination.getText().toString().trim();
+
+            // Contrôle du nom
+            if (nomVoyageur.isEmpty()) {
+                nom.setError("Veuillez saisir votre nom");
+                nom.requestFocus();
+                return;
+            }
+
+            // Contrôle de l'année de naissance
+            if (naissance.isEmpty()) {
+                anneeNaissance.setError("Veuillez saisir votre année de naissance");
+                anneeNaissance.requestFocus();
+                return;
+            }
+
+            // Contrôle de l'année de destination
+            if (destination.isEmpty()) {
+                anneeDestination.setError("Veuillez saisir l'année de destination");
+                anneeDestination.requestFocus();
+                return;
+            }
+
+            int anneeN;
+            int anneeD;
+
+            // n vérifiw l format numérique
+            try {
+                anneeN = Integer.parseInt(naissance);
+                anneeD = Integer.parseInt(destination);
+            } catch (NumberFormatException e) {
+                Toast.makeText(this,
+                        "Les années doivent être des nombres",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            //  lena ntal3ou Année actuelle
+            int anneeActuelle = Calendar.getInstance()
+                    .get(Calendar.YEAR);
+
+            // n vérifiw  l'année de naissance
+            if (anneeN < 1900 || anneeN > anneeActuelle) {
+                anneeNaissance.setError("Année de naissance invalide");
+                anneeNaissance.requestFocus();
+                return;
+            }
+
+            // n vérifiw  l'année de destination
+            if (anneeD <= anneeN) {
+                anneeDestination.setError(
+                        "La destination doit être après votre naissance");
+                anneeDestination.requestFocus();
+                return;
+            }
+
+            // n vérifiw l motif
+            int motifSelectionne =
+                    radioGroupMotif.getCheckedRadioButtonId();
+
+            if (motifSelectionne == -1) {
+                Toast.makeText(this,
+                        "Veuillez choisir un motif de voyage",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // wa9t Toutes les saisies sont valides
+            Toast.makeText(this,
+                    "Profil valide !",
+                    Toast.LENGTH_SHORT).show();
+
         });
     }
 }
