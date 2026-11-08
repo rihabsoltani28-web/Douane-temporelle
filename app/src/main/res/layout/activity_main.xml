@@ -86,7 +86,7 @@
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
-    <!-- سطر سنة الوصول -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
