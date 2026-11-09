@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96"
+    tools:ignore="ExtraText">
+
+    <!--ghleef mta3 passport-->
+    <path
+        android:fillColor="#7A1E2E"
+        android:pathData="M20,8h56a6,6 0 0 1 6,6v68a6,6 0 0 1 -6,6H20a6,6 0 0 1 -6,-6V14a6,6 0 0 1 6,-6z" />
+
+
+    <path
+        android:fillColor="#E8C766"
+        android:pathData="M48,28m-12,0a12,12 0 1,0 24,0a12,12 0 1,0 -24,0" />
+
+
+    <path
+        android:fillColor="#E8C766"
+        android:pathData="M28,52h40v4H28z" />
+    <path
+        android:fillColor="#E8C766"
+        android:pathData="M34,62h28v3H34z" />
+</vector>

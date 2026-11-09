@@ -5,6 +5,8 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Button;
 import android.widget.Toast;
+import android.content.Intent;
+import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -13,6 +15,7 @@ import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
+
 
 public class MainActivity extends AppCompatActivity {
 //houni 3malt déclaration des variables mte3i
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         // chnowa bch ysir wa9t clic 3la bouton
         btnInspecter.setOnClickListener(v -> {
 
-            // récupérite les valeurs eli dakhalhom utilisateur
+            // nahit les espace mn les valeurs eli dakhalhom utilisateur w
             String nomVoyageur = nom.getText().toString().trim();
             String naissance = anneeNaissance.getText().toString().trim();
             String destination = anneeDestination.getText().toString().trim();
@@ -102,14 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            // n vérifiw  l'année de destination
-            if (anneeD <= anneeN) {
-                anneeDestination.setError(
-                        "La destination doit être après votre naissance");
-                anneeDestination.requestFocus();
-                return;
-            }
-
             // n vérifiw l motif
             int motifSelectionne =
                     radioGroupMotif.getCheckedRadioButtonId();
@@ -121,10 +116,18 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            // wa9t Toutes les saisies sont valides
-            Toast.makeText(this,
-                    "Profil valide !",
-                    Toast.LENGTH_SHORT).show();
+            // khdhit l motif l mokhtara
+            RadioButton rbChoisi = findViewById(motifSelectionne);
+            String motif = rbChoisi.getText().toString();
+
+            //bch n lancer l'act 2
+            Intent intent = new Intent(MainActivity.this, VerificationActivity.class);
+            String m = CleUtils.MATRICULE;
+            intent.putExtra(CleUtils.construireCle(m, CleUtils.NOM), nomVoyageur);
+            intent.putExtra(CleUtils.construireCle(m, CleUtils.NAISSANCE), anneeN);
+            intent.putExtra(CleUtils.construireCle(m, CleUtils.DESTINATION), anneeD);
+            intent.putExtra(CleUtils.construireCle(m, CleUtils.MOTIF), motif);
+            startActivity(intent);
 
         });
     }
