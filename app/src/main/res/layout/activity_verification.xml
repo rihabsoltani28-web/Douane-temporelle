@@ -7,7 +7,7 @@ android:background="#F3E9D2"
 android:padding="12dp"
 android:weightSum="1">
     <ImageView
-        android:id="@+id/rs_image_passeport"
+        android:id="@+id/rs_imgPass"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.3"
@@ -25,7 +25,7 @@ android:weightSum="1">
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/rs_titre_passeport"
+        android:id="@+id/rs_titPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -35,50 +35,50 @@ android:weightSum="1">
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/rs_nom_resume"
+        android:id="@+id/rs_nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rs_titre_passeport"
+        android:layout_below="@id/rs_titPass"
         android:layout_marginTop="16dp"
         android:text="Nom : "
         android:textColor="#000000"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/rs_age_temporel"
+        android:id="@+id/rs_ageTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rs_nom_resume"
+        android:layout_below="@id/rs_nom"
         android:layout_marginTop="8dp"
         android:text="Âge temporel : "
         android:textColor="#000000"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/rs_naissance_resume"
+        android:id="@+id/rs_naiss"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rs_age_temporel"
+        android:layout_below="@id/rs_ageTemp"
         android:layout_marginTop="8dp"
         android:text="Naissance : "
         android:textColor="#000000"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/rs_destination_resume"
+        android:id="@+id/rs_dest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rs_naissance_resume"
+        android:layout_below="@id/rs_naiss"
         android:layout_marginTop="8dp"
         android:text="Destination : "
         android:textColor="#000000"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/rs_motif_resume"
+        android:id="@+id/rs_motif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rs_destination_resume"
+        android:layout_below="@id/rs_dest"
         android:layout_marginTop="8dp"
         android:text="Motif : "
         android:textColor="#000000"
@@ -88,7 +88,7 @@ android:weightSum="1">
         android:id="@+id/rs_alerte_paradoxe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rs_motif_resume"
+        android:layout_below="@id/rs_motif"
         android:layout_marginTop="8dp"
         android:text=""
         android:textColor="#C62828"

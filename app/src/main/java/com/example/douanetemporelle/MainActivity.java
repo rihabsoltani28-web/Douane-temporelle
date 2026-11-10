@@ -1,3 +1,4 @@
+
 package com.example.douanetemporelle;
 
 import android.os.Bundle;
@@ -18,12 +19,13 @@ import java.util.Calendar;
 
 
 public class MainActivity extends AppCompatActivity {
-//houni 3malt déclaration des variables mte3i
+
+    //houni 3malt déclaration des variables mte3i
     EditText nom;
-    EditText anneeNaissance;
-    EditText anneeDestination;
+    EditText anneeNaiss;
+    EditText anneeDest;
     RadioGroup radioGroupMotif;
-    Button btnInspecter;
+    Button btnInspect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,18 +48,18 @@ public class MainActivity extends AppCompatActivity {
 
         // récupérite les composants eli fi l'interface
         nom = findViewById(R.id.rs_nom);
-        anneeNaissance = findViewById(R.id.rs_annee_naissance);
-        anneeDestination = findViewById(R.id.rs_annee_destination);
+        anneeNaiss = findViewById(R.id.rs_anneeN);
+        anneeDest = findViewById(R.id.rs_anneeD);
         radioGroupMotif = findViewById(R.id.rs_radio_group_motif);
-        btnInspecter = findViewById(R.id.rs_btn_inspecter);
+        btnInspect = findViewById(R.id.rs_btn_insp);
 
         // chnowa bch ysir wa9t clic 3la bouton
-        btnInspecter.setOnClickListener(v -> {
+        btnInspect.setOnClickListener(v -> {
 
             // nahit les espace mn les valeurs eli dakhalhom utilisateur w
             String nomVoyageur = nom.getText().toString().trim();
-            String naissance = anneeNaissance.getText().toString().trim();
-            String destination = anneeDestination.getText().toString().trim();
+            String naissance = anneeNaiss.getText().toString().trim();
+            String destination = anneeDest.getText().toString().trim();
 
             // Contrôle du nom
             if (nomVoyageur.isEmpty()) {
@@ -68,15 +70,15 @@ public class MainActivity extends AppCompatActivity {
 
             // Contrôle de l'année de naissance
             if (naissance.isEmpty()) {
-                anneeNaissance.setError("Veuillez saisir votre année de naissance");
-                anneeNaissance.requestFocus();
+                anneeNaiss.setError("Veuillez saisir votre année de naissance");
+                anneeNaiss.requestFocus();
                 return;
             }
 
             // Contrôle de l'année de destination
             if (destination.isEmpty()) {
-                anneeDestination.setError("Veuillez saisir l'année de destination");
-                anneeDestination.requestFocus();
+                anneeDest.setError("Veuillez saisir l'année de destination");
+                anneeDest.requestFocus();
                 return;
             }
 
@@ -94,14 +96,13 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            //  lena ntal3ou Année actuelle
+            // lena ntal3ou Année actuelle
             int anneeActuelle = Calendar.getInstance()
                     .get(Calendar.YEAR);
 
-            // n vérifiw  l'année de naissance
-            if (anneeN < 1900 || anneeN > anneeActuelle) {
-                anneeNaissance.setError("Année de naissance invalide");
-                anneeNaissance.requestFocus();
+            if (anneeN > anneeActuelle) {
+                anneeNaiss.setError("L'année de naissance ne peut pas être dans le futur");
+                anneeNaiss.requestFocus();
                 return;
             }
 

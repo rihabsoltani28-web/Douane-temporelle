@@ -76,7 +76,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/rs_annee_naissance"
+            android:id="@+id/rs_anneeN"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
@@ -105,7 +105,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/rs_annee_destination"
+            android:id="@+id/rs_anneeD"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
@@ -141,19 +141,19 @@
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/rs_motif_tourisme"
+                android:id="@+id/rs_tourisme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tourisme" />
 
             <RadioButton
-                android:id="@+id/rs_motif_modification"
+                android:id="@+id/rs_modification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Modification du passé" />
 
             <RadioButton
-                android:id="@+id/rs_motif_fuite"
+                android:id="@+id/rs_fuite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fuite" />
@@ -161,7 +161,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/rs_btn_inspecter"
+        android:id="@+id/rs_btn_insp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

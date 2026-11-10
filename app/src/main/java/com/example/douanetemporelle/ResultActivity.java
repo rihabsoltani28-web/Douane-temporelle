@@ -1,3 +1,4 @@
+
 package com.example.douanetemporelle;
 
 import android.content.Intent;
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ResultActivity extends AppCompatActivity {
 
     // Déclaration des variables
-    TextView tvVerdict, tvMessage;
+    TextView resVerdict, resMsg;
     Button btnNouveauVoyageur;
 
     @Override
@@ -20,8 +21,8 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         // Récupérer les composants mn le fichier XML
-        tvVerdict = findViewById(R.id.rs_tv_verdict);
-        tvMessage = findViewById(R.id.rs_tv_message);
+        resVerdict = findViewById(R.id.rs_resVerdict);
+        resMsg = findViewById(R.id.rs_resMessage);
         btnNouveauVoyageur = findViewById(R.id.rs_btn_nouveau_voyageur);
 
         // Récupérer les données envoyées mn VerificationActivity
@@ -39,17 +40,16 @@ public class ResultActivity extends AppCompatActivity {
         if (approuve) {
 
             // wa9t eli cas approuvé l fond yabda vert
-            tvVerdict.setText("VERDICT APPROUVÉ");
-            tvMessage.setText("Bon voyage " + nom + " !");
-
+            resVerdict.setText("VERDICT APPROUVÉ");
+            resMsg.setText("Bon voyage " + nom + " !");
             findViewById(R.id.rs_layout_resultat)
                     .setBackgroundColor(Color.GREEN);
 
         } else {
 
             // wa9t eli cas refusé l fond yabda rouge
-            tvVerdict.setText("VERDICT REFUSÉ");
-            tvMessage.setText(
+            resVerdict.setText("VERDICT REFUSÉ");
+            resMsg.setText(
                     nom + " est en état d'arrestation temporelle.");
 
             findViewById(R.id.rs_layout_resultat)

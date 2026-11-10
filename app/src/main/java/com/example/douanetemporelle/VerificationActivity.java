@@ -1,3 +1,4 @@
+
 package com.example.douanetemporelle;
 
 import android.content.Intent;
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class VerificationActivity extends AppCompatActivity {
 
     // declaration des variables
-    TextView tvNom, tvAge, tvNaissance, tvDestination, tvMotif, tvAlerte;
+    TextView verNom, verAge, verNaiss, verDest, verMotif, verAlerte;
     Button btnApprouver, btnRefuser;
 
     @Override
@@ -19,12 +20,12 @@ public class VerificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verification);
 
         // rbatna les attribut mn xml
-        tvNom = findViewById(R.id.rs_nom_resume);
-        tvAge = findViewById(R.id.rs_age_temporel);
-        tvNaissance = findViewById(R.id.rs_naissance_resume);
-        tvDestination = findViewById(R.id.rs_destination_resume);
-        tvMotif = findViewById(R.id.rs_motif_resume);
-        tvAlerte = findViewById(R.id.rs_alerte_paradoxe);
+        verNom = findViewById(R.id.rs_nom);
+        verAge = findViewById(R.id.rs_ageTemp);
+        verNaiss = findViewById(R.id.rs_naiss);
+        verDest = findViewById(R.id.rs_dest);
+        verMotif = findViewById(R.id.rs_motif);
+        verAlerte = findViewById(R.id.rs_alerte_paradoxe);
         btnApprouver = findViewById(R.id.rs_btn_approuver);
         btnRefuser = findViewById(R.id.rs_btn_refuser);
 
@@ -40,16 +41,16 @@ public class VerificationActivity extends AppCompatActivity {
         int difference = Math.abs(destination - naissance);
 
         // hatit les données fl passeport(interface)
-        tvNom.setText("Nom : " + nom);
-        tvAge.setText("Âge temporel : " + difference + " ans");
-        tvNaissance.setText("Naissance : " + naissance);
-        tvDestination.setText("Destination : " + destination);
-        tvMotif.setText("Motif : " + motif);
+        verNom.setText("Nom : " + nom);
+        verAge.setText("Âge temporel : " + difference + " ans");
+        verNaiss.setText("Naissance : " + naissance);
+        verDest.setText("Destination : " + destination);
+        verMotif.setText("Motif : " + motif);
 
         // lena hatit ken l motif feha modification du passé w ken age temporel premier desactiver bouton approuver
         if ("Modification du passé".equals(motif) && estPremier(difference)) {
             btnApprouver.setEnabled(false);
-            tvAlerte.setText("Paradoxe détecté : approbation impossible");
+            verAlerte.setText("Paradoxe détecté : approbation impossible");
         }
 
         // ki nenzel ala bouton approuver ye9bel w fonction tab3eth true w esm l 3abed

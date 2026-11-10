@@ -4,8 +4,6 @@ public class CleUtils {
 
     //hatit les 4 dernier chiffre de carte CIN khater f carte etudiant mafamech num
     public static final String MATRICULE = "2916";
-
-    // أسماء المفاتيح بدون الرقم
     public static final String NOM = "NOM_VOYAGEUR";
     public static final String NAISSANCE = "ANNEE_NAISSANCE";
     public static final String DESTINATION = "ANNEE_DESTINATION";
