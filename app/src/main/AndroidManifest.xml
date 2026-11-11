@@ -11,24 +11,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DouaneTemporelle">
+
+        <!-- Page d'accueil : première page de l'application -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".HomeActivity"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <!-- Formulaire du nouveau voyageur -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Vérification du voyage -->
         <activity
             android:name=".VerificationActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Résultat du voyage -->
         <activity
             android:name=".ResultActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Page personnalisée selon le type de voyage -->
+        <activity
+            android:name=".WelcomeVoyageActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

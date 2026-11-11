@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rs_welcome_voyage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#10243A">
+
+    <ImageView
+        android:id="@+id/rs_imgvoy"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:scaleType="fitCenter"
+        android:contentDescription="Image du voyage"/>
+
+    <TextView
+        android:id="@+id/rs_titvoy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/rs_messvoy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saha lik, nchallah ykoun voyage 3ejbek !"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/rs_btn_nouveau_voyageur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nouveau voyageur"
+        android:layout_marginTop="40dp"/>
+
+</LinearLayout>

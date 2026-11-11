@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rs_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#10243A">
+
+    <TextView
+        android:id="@+id/rs_bienvenue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue dans\nDouane Temporelle"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="35dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Avez-vous déjà voyagé avec nous ?"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <RadioGroup
+        android:id="@+id/rs_dejavoyage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rs_oui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oui"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="35dp"/>
+
+        <RadioButton
+            android:id="@+id/rs_non"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non"
+            android:textColor="#FFFFFF"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quel type de voyage avez-vous effectué ?"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"/>
+
+    <RadioGroup
+        android:id="@+id/rs_typevoyage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rs_tourisme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tourisme"
+            android:textColor="#FFFFFF"
+            android:enabled="false"/>
+
+        <RadioButton
+            android:id="@+id/rs_modification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modification du passé"
+            android:textColor="#FFFFFF"
+            android:enabled="false"/>
+
+        <RadioButton
+            android:id="@+id/rs_fuite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fuite"
+            android:textColor="#FFFFFF"
+            android:enabled="false"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/rs_btn_continuer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continuer"
+        android:layout_marginTop="15dp"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/rs_btn_nouv_voy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nouveau voyageur"
+        android:layout_marginTop="30dp"
+        android:enabled="false"/>
+
+</LinearLayout>
